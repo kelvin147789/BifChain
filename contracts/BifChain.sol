@@ -1,4 +1,4 @@
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.4.22;
 
 
 contract BifChain {
@@ -25,19 +25,6 @@ contract BifChain {
     function returnAmountOfUser() public view returns (uint256) {
         return amountOfUser;
     } 
-
-    // function register() public returns(bool)
-    // {
-    //     require(!registered[msg.sender],"Registered.");
-    //     amountOfUser = amountOfUser+=1;
-    //     uniqueId[msg.sender] = amountOfUser;
-    //     registered[msg.sender] = true;
-    //     return registered[msg.sender];
-    // }
-
-    // function getUniqueId() public view returns(uint256) {
-    //     return uniqueId[msg.sender];
-    // }
 
     function record(uint256 _x,address _y,string memory _t ,string memory _z) public {
         List[msg.sender].push(Item(_x,_y,_t,_z,block.timestamp));
