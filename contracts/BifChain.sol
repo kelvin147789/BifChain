@@ -20,6 +20,7 @@ contract BifChain {
         int _bifB;
         address _address;
         string _description;
+        // _bifData = (D.) 思想(mind) , 行為(action) , 結果(result)
         string _bifData;
         uint256 _currentTimeStamp;
     }
