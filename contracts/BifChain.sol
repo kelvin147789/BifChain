@@ -18,6 +18,7 @@ contract BifChain {
         uint256 _bifNo;
         address _address;
         string _description;
+        uint256 _currentTimeStamp;
        
     }
 
@@ -41,7 +42,7 @@ contract BifChain {
     function record(uint256 _x,address _y,string memory _z) public {
 
         
-        List[msg.sender].push(Item(_x,_y,_z));
+        List[msg.sender].push(Item(_x,_y,_z,block.timestamp));
     }
 
      function getRecordBifNoX(uint256 index) public view returns (uint256 _x){
@@ -60,6 +61,12 @@ contract BifChain {
         
         _z = List[msg.sender][index]._description;
         return _z;
+    }
+
+    function getRecordTimeStampT(uint256 index) public view returns (uint256 _t){
+        
+        _t = List[msg.sender][index]._currentTimeStamp;
+        return _t;
     }
 
     
