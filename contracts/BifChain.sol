@@ -15,11 +15,11 @@ contract BifChain {
     }
 
     struct Item {
-        uint256 _bifNo;
+        uint256 _bifB;
         address _address;
         string _description;
+        string _bifData;
         uint256 _currentTimeStamp;
-       
     }
 
     function returnAmountOfUser() public view returns (uint256) {
@@ -39,15 +39,15 @@ contract BifChain {
     //     return uniqueId[msg.sender];
     // }
 
-    function record(uint256 _x,address _y,string memory _z) public {
+    function record(uint256 _x,address _y,string memory _t ,string memory _z) public {
 
         
-        List[msg.sender].push(Item(_x,_y,_z,block.timestamp));
+        List[msg.sender].push(Item(_x,_y,_t,_z,block.timestamp));
     }
 
      function getRecordBifNoX(uint256 index) public view returns (uint256 _x){
         
-        _x = List[msg.sender][index]._bifNo;
+        _x = List[msg.sender][index]._bifB;
         return _x;
     }
 
@@ -68,6 +68,17 @@ contract BifChain {
         _t = List[msg.sender][index]._currentTimeStamp;
         return _t;
     }
+
+
+    function getRecordDataD(uint256 index) public view returns (string memory _d){
+        
+        _d = List[msg.sender][index]._bifData;
+        return _d;
+    }
+
+
+
+    
 
     
 
