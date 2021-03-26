@@ -58,6 +58,11 @@ const Main = () => {
                 Record
       </button>
 
+      {/* <div className="fixed-box">
+      </div> */}
+
+     
+
 
 
 
